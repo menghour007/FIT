@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/font.css">
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Koulen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Siemreap&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+<style>
+  /* Custom animation for rotating the underline */
+  .rotate-ruler::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0ea5e9;
+    transform: scaleX(0) rotate(0deg);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .rotate-ruler:hover::before {
+    transform: scaleX(1) rotate(0deg);
+  }
+</style>
+<body >
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+    <div class="bg-white">
+        <header class=" inset-x-0 top-0 z-50 bg-white fixed shadow-sm">
+          <nav class="flex items-center justify-between p-0 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1 p-2.5">
+              <a href="index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img class="h-10 w-auto" src="../image/fitlogo.png" alt="">
+              </a>
+            </div>
+            <div class="flex lg:hidden p-2.5">
+                <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span> <!-- Important for selection -->
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                  </button>
+                  
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12 p-6">
+              <!-- Home Link -->
+              <a href="index.html" class="relative text-sm font-semibold text-gray-900 flex items-center gap-2 rotate-ruler">
+                <i class="fas fa-home text-sky-500"></i> Home
+              </a>
+          
+              <!-- Program Link with Dropdown -->
+              <div class="relative group">
+                <a href="#" class="relative text-sm font-semibold text-gray-900 flex items-center gap-2 rotate-ruler">
+                  <i class="fas fa-graduation-cap text-sky-500"></i> Program
+                  <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                </a>
+                
+                <!-- Dropdown Submenu -->
+                <div class="absolute left-0 mt-2 w-80 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-80 border border-gray-100">
+                  <a href="IT.html" class=" px-4 py-3 text-gray-700 flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200">
+                    <i class="fas fa-laptop-code text-sky-500"></i> Information Technology
+                  </a>
+                  <a href="BIT.html" class=" px-4 py-3 text-gray-700 flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200">
+                    <i class="fas fa-briefcase text-sky-500"></i> Business Information Technology
+                  </a>
+                  <a href="Robot.html" class=" px-4 py-3 text-gray-700 flex items-center gap-2 hover:bg-gray-50 transition-colors duration-200">
+                    <i class="fas fa-robot text-sky-500"></i> Robotics Engineering
+                  </a>
+                </div>
+              </div>
+          
+              <!-- Other Links -->
+              <a href="project.html" class="relative text-sm font-semibold text-gray-900 flex items-center gap-2 rotate-ruler">
+                <i class="fas fa-folder-open text-sky-500"></i> Project
+              </a>
+              <a href="professor.html" class="relative text-sm font-semibold text-gray-900 flex items-center gap-2 rotate-ruler">
+                <i class="fas fa-chalkboard-teacher text-sky-500"></i> Professor & Lecturer
+              </a>
+              <a href="ContactUS.html" class="relative text-sm font-semibold text-gray-900 flex items-center gap-2 rotate-ruler">
+                <i class="fas fa-envelope text-sky-500"></i> Contact Us
+              </a>
+            </div>
+              
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+              <a href="../html/login.html" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+          <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:m-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+                
+                <a href="index.html" class="-m-1.5 p-1.5">
+                  <span class="sr-only">Your Company</span>
+                  <img class="h-10 w-auto" src="../image/fitlogo.png" alt="">
+                </a>
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                  <div class="space-y-2 py-6">
+                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><i class="fas fa-home text-sky-500"></i> Home</a><div class="relative group">
+                      <!-- Main Menu Link -->
+                      <a href="#" id="program-link" class="-mx-3 block rounded-lg px-3 py-2 relative text-base/7 font-semibold text-gray-900 ">
+                        <i class="fas fa-graduation-cap text-sky-500"></i> Program
+                        <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                      </a>
+                      
+                      <!-- Dropdown Submenu -->
+                      <div id="program-menu" class="absolute left-0 w-200 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 lg:block hidden">
+                        <a href="IT.html" class="block px-4 py-2 text-gray-900 hover:bg-gray-100"><i class="fas fa-laptop-code text-sky-500"></i> Information Technology</a>
+                        <a href="BIT.html" class="block px-4 py-2 text-gray-900 hover:bg-gray-100"><i class="fas fa-briefcase text-sky-500"></i> Business Information Technology</a>
+                        <a href="Robot.html" class="block px-4 py-2 text-gray-900 hover:bg-gray-100"><i class="fas fa-robot text-sky-500"></i> Robotics Engineering</a>
+                      </div>
+                    </div>
+                    
+                    <a href="project.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><i class="fas fa-folder-open text-sky-500"></i> Project</a>
+                    <a href="professor.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><i class="fas fa-chalkboard-teacher text-sky-500"></i> Professor & Lecturer</a>
+                    <a href="ContactUS.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"><i class="fas fa-envelope text-sky-500"></i> Contact Us</a>
+                  </div>
+                  <div class="py-6">
+                    <a href="../html/login.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="">
+          <!-- Header Section -->
+          <script>
+                    tailwind.config = {
+                      theme: {
+                        extend: {
+                          keyframes: {
+                            typing: {
+                              "0%": { width: "0%" },
+                              "100%": { width: "100%" }
+                            },
+                            blink: {
+                              "50%": { borderColor: "transparent" },
+                              "100%": { borderColor: "white" }
+                            }
+                          },
+                          animation: {
+                            typing: "typing 1s steps(100) forwards",
+                            blink: "blink 0.7s infinite"
+                          }
+                        }
+                      }
+                    }
+                  </script>
+                   
+                   <header class="relative flex items-center justify-center mt-10 text-white text-center min-h-[40vh] sm:min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] xl:min-h-[680px] w-full">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 w-full h-full">
+                        <img src="https://cdn.wallpapersafari.com/86/65/nqENxl.jpg" 
+                             alt="Background Image"
+                             class="w-full h-full object-cover brightness-75">
+                    </div>
+                
+                    <!-- Text Overlay -->
+                    <div class="relative z-10 p-4 text-center">
+                        <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold border-r-4 border-white pr-2 
+                                   overflow-hidden whitespace-nowrap animate-typing animate-blink">
+                            Bachelor of IT
+                        </h1>
+                    </div>
+                </header>
+                
+                
+                
+                
+        <div class="flex justify-center  p-5">
+          <div class="max-w-7xl  hover:bg-gray-300 border-2 rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center p-5 gap-6">
+            
+            <!-- Text Section -->
+            <div class="flex flex-col justify-between w-full  md:text-left">
+              <h5 class="mb-2 text-2xl font-medium tracking-tight text-gray-900 dark:text-white" data-aos="fade-down">
+                OBJECTIVE: The Bachelor of Information Technology program enables students to
+              </h5>
+              <p class="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400" data-aos="fade-down">
+                1. Cultivate professionals with both theoretical knowledge
+                 and practical skills in Information Communication Technology (ICT). <br>
+                2. Stregthen the capacity and foster institutional development in ICT within tertiary institutions, as well as across the private and public sectors. <br>
+                3. Develop a practical management capacity to effectively connect the technology sector with the government and industry within the broader context of ICT. <br>
+                4. Provide most of the ICT professionals needed by the Cambodian market and its neighboring countries. <br>
+                5. Promote ethical and sustainable practicses in IT professionals.
+              </p>
+            </div>
+        
+            <!-- Image Section -->
+            <div class="w-full flex justify-center" data-aos="fade-down">
+              <img class="w-full md:w-auto h-auto max-h-96 object-cover rounded-xl" 
+                   src="https://xclcamps.com/wp-content/uploads/coding-difference-1.jpg" 
+                   alt="AI Image">
+            </div>
+        
+          </div>
+        </div>
+        <div class="flex justify-center items-center  p-4">
+          <div class="w-full max-w-7xl space-y-6">
+        
+            <!-- Semester Blocks -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Semester I -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester I</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Python Programming</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Mathmatics for Computing I</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Essentials I(Cisco ITE)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Critical Thinking</li>
+                        <li class="p-2 rounded"data-aos="fade-down">English for Computing</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester II -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester II</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Algorithms and Data structure with Python</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Mathmatics for Computing II</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Essentials II(Cisco ITE)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Design Thinking (UI & UX design)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Architecture and Operating System</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester III -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester III</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Object Oriented Java Programming I</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Blockchain foundatals</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Administrator I (Cisco CCNA)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Database Management System (Mysql)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Statistic and Probability</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester IV -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester IV</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Object Oriented Java Programming II</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Financial Technology (FinTech)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Administrator II (Cisco CCNA)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">System Analysis Design</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Static Web Development (HTML,CSS & javascript)</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester V -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester V</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Introduction to Data Science</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Asp.net Web Application Development with C#</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Administrator III (Cisco CCNA)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Foundatal of Cybersecurity</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Window Server Administration</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester VI -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester VI</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Data Visualization with Power BI</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Asp.net Mobile Application Development with C#</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Network Administrator IV (Cisco CCNA)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Ethical Hacking</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Cloud Computing with Microsoft Azure</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester VII -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester VII</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"data-aos="fade-down">Cloud Computing with AWS</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Linux System Administration</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Computer Vision with Machine Learning</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Business Startup (IT project Management)</li>
+                        <li class="p-2 rounded"data-aos="fade-down">Research Methodlogy (Project Proposal)</li>
+                    </ul>
+                </div>
+    
+                <!-- Semester VIII -->
+                <div class="p-4 border-2 rounded-lg">
+                    <h2 class="text-xl font-bold mb-3"data-aos="fade-down">Semester VIII</h2><hr>
+                    <ul class="space-y-2">
+                        <li class="p-2 rounded"> </li>
+                        <li class="p-2 rounded"data-aos="fade-down">Seminar / Workshop</li>
+                        <li class="p-2 rounded"></li>
+                        <li class="p-2 rounded"></li>
+                        <li class="p-2 rounded"data-aos="fade-down">Project Completion & Thesis Writing </li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+        </div>
+        </div>
+          
+          <!-- Career Opportunities Section -->
+          <section class="max-w-7xl mx-auto p-8 bg-white mt-8 rounded-lg shadow">
+              <h2 class="text-2xl font-semibold text-gray-800" data-aos="fade-down">Career Opportunities for IT Graduates</h2>
+              <p class="mt-4 text-gray-600" data-aos="fade-down">Graduates of the IT program can pursue careers such as:</p>
+              <ul class="mt-4 text-gray-600 list-disc list-inside" data-aos="fade-down">
+                  <li>Software Developer</li>
+                  <li>IT Network Administrator</li>
+                  <li>Database Administrator</li>
+                  <li>System Architect</li>
+                  <li>Cybersecurity Analyst</li>
+                  <li>IT Consultant</li>
+              </ul>
+          </section>
+      
+          <!-- Why Choose IT Section -->
+          <section class="max-w-7xl mx-auto p-8 bg-white mt-8 rounded-lg shadow">
+              <h2 class="text-2xl font-semibold text-gray-800" data-aos="fade-down">Why Choose IT at National University of Management?</h2>
+              <p class="mt-4 text-gray-600" data-aos="fade-down">
+                  Our program blends academic excellence with hands-on learning. With strong industry ties, state-of-the-art facilities, and a curriculum that adapts to the ever-changing IT landscape, students are well-equipped for success in the field.
+              </p>
+          </section>
+      
+          <!-- Testimonials Section -->
+          <section class="max-w-7xl mx-auto p-8 bg-white mt-8 rounded-lg shadow">
+              <h2 class="text-2xl font-semibold text-gray-800">What Our Students Say</h2>
+              <blockquote class="mt-4 text-gray-600 italic border-l-4 border-blue-500 pl-4"data-aos="fade-down">
+                  “The Bachelor of IT program at the National University of Management gave me the technical expertise I needed to pursue my dream career. The hands-on approach, along with real-world projects, made a huge difference.” – Student C
+              </blockquote>
+          </section>
+      </main>
+      
+    </div>
+    <footer class="bg-gray-900 text-white py-10 ">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- About Section -->
+              <div data-aos="fade-down">
+                  <h3 class="text-xl font-semibold ">About Us</h3>
+                  <p class="mt-2 text-gray-400">We are committed to providing quality education and innovation in the field of technology and engineering.</p>
+                  
+              </div>
+  
+              <!-- Quick Links -->
+              <div>
+                  <h3 class="text-xl font-semibold"data-aos="fade-down">Quick Links</h3>
+                  <ul class="mt-2 space-y-2"data-aos="fade-down">
+                      <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                      <li><a href="#" class="text-gray-400 hover:text-white">Programs</a></li>
+                      <li><a href="#" class="text-gray-400 hover:text-white">Projects</a></li>
+                      <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Contact Information -->
+              <div>
+                  <h3 class="text-xl font-semibold"data-aos="fade-down">Contact Us</h3>
+                  <p class="mt-2 text-gray-400"data-aos="fade-down">123 Technology Avenue, Phnom Penh, Cambodia</p>
+                  <p class="text-gray-400"data-aos="fade-down">Email: info@university.edu</p>
+                  <p class="text-gray-400"data-aos="fade-down">Phone: +855 123 456 789</p>
+              </div>
+          </div>
+  
+          <!-- Social Media Links -->
+          <div class="mt-8 flex justify-center space-x-6"data-aos="fade-down">
+              <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin"></i></a>
+          </div>
+  
+          <!-- Copyright -->
+          <div class="mt-8 text-center text-gray-500">
+              <p>&copy; Lim Menghour. All Rights Reserved.</p>
+          </div>
+      </div>
+  </footer>
+  
+      
+      
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector("button span.sr-only"); 
+        const mobileMenu = document.querySelector("div[role='dialog']"); // Mobile menu container
+        const closeButton = mobileMenu.querySelector("button span.sr-only");
+        const backdrop = document.createElement("div");
+
+        
+        mobileMenu.classList.add("hidden");
+
+        
+        backdrop.classList.add("fixed", "inset-0", "z-40", "bg-opacity-50", "hidden");
+        document.body.appendChild(backdrop);
+
+        function openMenu() {
+            mobileMenu.classList.remove("hidden");
+            backdrop.classList.remove("hidden");
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add("hidden");
+            backdrop.classList.add("hidden");
+        }
+
+        
+        menuButton.closest("button").addEventListener("click", openMenu);
+        closeButton.closest("button").addEventListener("click", closeMenu);
+        backdrop.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    const programLink = document.getElementById("program-link");
+    const programMenu = document.getElementById("program-menu");
+
+    
+    programLink.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1024) { 
+            e.preventDefault();
+            programMenu.classList.toggle("hidden");
+            programMenu.classList.toggle("opacity-100");
+            programMenu.classList.toggle("visible");
+        }
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1024 && !programMenu.contains(e.target) && e.target !== programLink) {
+            programMenu.classList.add("hidden");
+            programMenu.classList.remove("opacity-100", "visible");
+        }
+    });
+});
+
+
+
+</script>
+
+</html>
